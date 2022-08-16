@@ -18,6 +18,7 @@ namespace RefugioService.Controllers
             //{
                 clsBaseDatos bd = new clsBaseDatos();
                 return bd.VerificarCuenta(cuenta, pwd);
+            string ho = "";
 
             //}
             //catch (Exception ex)
