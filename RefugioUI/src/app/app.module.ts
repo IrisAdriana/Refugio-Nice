@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
