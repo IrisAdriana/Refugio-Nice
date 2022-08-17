@@ -2,18 +2,22 @@
   flex: 1 1 auto;
 }
 
-img{
+img {
   width: 40px;
   height: 40px;
 }
 
-nav{
+nav {
   float: right;
-  padding-left: 65em;
+  padding-left: 20em;
 }
 
-a{
+a {
   padding-left: 2em;
   color: #fff;
   text-decoration: none;
+}
+
+.btn {
+  padding-left: 25em;
 }
