@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Desarrollos\\RefugioService\\Refugio-Nice\\Backend\\RefugioService\\RefugioService.csproj": {}
+    "C:\\Users\\Public\\ProjectNice\\Backend\\RefugioService\\RefugioService.csproj": {}
   },
   "projects": {
-    "C:\\Desarrollos\\RefugioService\\Refugio-Nice\\Backend\\RefugioService\\RefugioService.csproj": {
+    "C:\\Users\\Public\\ProjectNice\\Backend\\RefugioService\\RefugioService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Desarrollos\\RefugioService\\Refugio-Nice\\Backend\\RefugioService\\RefugioService.csproj",
+        "projectUniqueName": "C:\\Users\\Public\\ProjectNice\\Backend\\RefugioService\\RefugioService.csproj",
         "projectName": "RefugioService",
-        "projectPath": "C:\\Desarrollos\\RefugioService\\Refugio-Nice\\Backend\\RefugioService\\RefugioService.csproj",
-        "packagesPath": "C:\\Users\\marcelo.saavedra\\.nuget\\packages\\",
-        "outputPath": "C:\\Desarrollos\\RefugioService\\Refugio-Nice\\Backend\\RefugioService\\obj\\",
+        "projectPath": "C:\\Users\\Public\\ProjectNice\\Backend\\RefugioService\\RefugioService.csproj",
+        "packagesPath": "C:\\Users\\iris.escobar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Public\\ProjectNice\\Backend\\RefugioService\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\marcelo.saavedra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iris.escobar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
