@@ -28,7 +28,7 @@ namespace RefugioService.Controllers
             //}
         }
         [HttpPost(Name = "CrearNuevoRescate")]
-        public void CrearNuevaMascota(Rescate rescate)
+        public void CrearNuevoRescate(Rescate rescate)
         {
             //try
             //{
