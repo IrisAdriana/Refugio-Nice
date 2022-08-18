@@ -11306,6 +11306,47 @@ header.masthead {
 header.masthead h1, header.masthead .h1 {
   font-size: 2.25rem;
 }
+
+header.milo{
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: linear-gradient(to bottom, transparent, #fff), url("/assets/Image/milo2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  border-radius: 0.5%;
+}
+header.milo1{
+  height: 50px;
+  width: 275px;
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: url("/assets/Image/milo1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  border-radius: 50%;
+}
+h6.txt{
+  color: #000;
+  text-align: justify;
+}
+h6.txt1{
+  color: #000;
+  text-align: justify;
+}
+header.Compadrito {
+  padding-top: 30rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: linear-gradient(to bottom, transparent, #fff), url("/assets/Image/compa.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
 @media (min-width: 992px) {
   header.masthead {
     height: 100vh;
