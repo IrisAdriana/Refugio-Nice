@@ -12,7 +12,7 @@ namespace RefugioService.Utiles
 
             Conexion conexion = new Conexion();
 
-            Cuenta usrcuenta = new Cuenta();            
+            Cuenta usrcuenta = new Cuenta();
             string MensajeError = string.Empty;
 
 
@@ -87,11 +87,11 @@ namespace RefugioService.Utiles
         }
         public List<clsColor> ListaColores()
         {
-            
+
             Conexion conexion = new Conexion();
 
             clsColor color = null;
-            List<clsColor> lstcolor =new List<clsColor>();
+            List<clsColor> lstcolor = new List<clsColor>();
             string MensajeError = string.Empty;
 
 
@@ -113,7 +113,7 @@ namespace RefugioService.Utiles
                     {
                         using (SqlDataReader reader = sqlCommand.ExecuteReader())
                         {
-                            if(VerificaExisteCampoReader(reader, "ErrorMessage")==false)
+                            if (VerificaExisteCampoReader(reader, "ErrorMessage") == false)
                             {
                                 if (reader.HasRows)
                                 {
@@ -147,8 +147,8 @@ namespace RefugioService.Utiles
                         throw ex;
                     }
 
-                    
-                    
+
+
 
 
                     //MensajeError = sqlCommand.Parameters["@Mensaje"].Value.ToString();                  
@@ -159,7 +159,7 @@ namespace RefugioService.Utiles
             else
             {
 
-            }            
+            }
             return lstcolor;
         }
 
@@ -239,6 +239,85 @@ namespace RefugioService.Utiles
 
             }
             return lstraza;
+        }
+
+        public List<TipoDocumento> ListaTipoDocumento()
+        {
+
+            Conexion conexion = new Conexion();
+
+            TipoDocumento tipodocumento = null;
+            List<TipoDocumento> lsttipodocumento = new List<TipoDocumento>();
+            string MensajeError = string.Empty;
+
+
+            if (conexion.sqlConexion.State == ConnectionState.Open)
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("SP_ObtenerTipoDocumento", conexion.sqlConexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.Clear();
+                    //sqlCommand.Parameters.Add(new SqlParameter("@idUsuario", IdUsuario));
+                    //sqlCommand.Parameters.Add("@nombres", SqlDbType.VarChar, (64)).Direction = ParameterDirection.Output;
+                    //sqlCommand.Parameters.Add("@apellidos", SqlDbType.VarChar, (64)).Direction = ParameterDirection.Output;
+                    //sqlCommand.Parameters.Add("@email", SqlDbType.VarChar, 64).Direction = ParameterDirection.Output;
+                    //sqlCommand.Parameters.Add("@Mensaje", SqlDbType.VarChar, 254).Direction = ParameterDirection.Output;
+
+                    //sqlCommand.ExecuteNonQuery();
+
+                    try
+                    {
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (VerificaExisteCampoReader(reader, "ErrorMessage") == false)
+                            {
+                                if (reader.HasRows)
+                                {
+                                    while (reader.Read())
+                                    {
+                                        tipodocumento = new TipoDocumento();
+                                        tipodocumento.idtipodocumento = (Int32)reader["IdTipoDocumentoIdentidad"];
+                                        tipodocumento.tipodocumento = reader["TipoDocumento"].ToString();
+                                        tipodocumento.estado = "A";//reader["estado"].ToString();
+                                        lsttipodocumento.Add(tipodocumento);
+
+                                    }
+                                }
+                                else
+                                {
+                                    throw new Exception("No existen razas");
+                                }
+                            }
+                            else
+                            {
+                                if (reader.Read())
+                                {
+                                    throw new Exception(reader["ErrorMessage"].ToString());
+                                }
+                            }
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+
+
+
+
+
+                    //MensajeError = sqlCommand.Parameters["@Mensaje"].Value.ToString();                  
+
+                }
+                conexion.CerrarConexion();
+            }
+            else
+            {
+
+            }
+            return lsttipodocumento;
         }
 
         public List<clsTipoMascota> ListaTiposMascotas()
@@ -398,23 +477,280 @@ namespace RefugioService.Utiles
             return lstmascota;
         }
 
+        public void NuevaMascota(clsMascota mascota)
+        {
+
+            Conexion conexion = new Conexion();
+
+            string MensajeError = string.Empty;
+
+
+            if (conexion.sqlConexion.State == ConnectionState.Open)
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("SP_Insertar_Mascotas", conexion.sqlConexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.Clear();
+                    sqlCommand.Parameters.Add(new SqlParameter("@Nombre", mascota.Nombre));
+                    sqlCommand.Parameters.Add(new SqlParameter("@IdTipoMascota", mascota.IdTipoMascota));
+                    sqlCommand.Parameters.Add(new SqlParameter("@IdColor", mascota.IdColor));
+                    sqlCommand.Parameters.Add(new SqlParameter("@IdRaza", mascota.IdRaza));
+                    sqlCommand.Parameters.Add(new SqlParameter("@FechaNacimiento", mascota.FechaNacimiento));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Edad", mascota.Edad));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Genero", mascota.Genero));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Caracter", mascota.Caracter));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Observaciones", mascota.Observaciones));
+                    sqlCommand.Parameters.Add(new SqlParameter("@FechaRegistro", mascota.FechaRegistro));
+                    sqlCommand.Parameters.Add(new SqlParameter("@URLFoto", mascota.URLFoto));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Estado", mascota.Estado));
+
+                    try
+                    {
+                        sqlCommand.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+
+
+
+                }
+                conexion.CerrarConexion();
+            }
+            else
+            {
+
+            }
+
+        }
+
+        public List<TiposRescate> ListaTiposRescates()
+        {
+
+            Conexion conexion = new Conexion();
+
+            TiposRescate tiporescate = null;
+            List<TiposRescate> lsttiporescate = new List<TiposRescate>();
+            string MensajeError = string.Empty;
+
+
+            if (conexion.sqlConexion.State == ConnectionState.Open)
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("SP_ObtenerTiposRescates", conexion.sqlConexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.Clear();
+                    //sqlCommand.Parameters.Add(new SqlParameter("@idUsuario", IdUsuario));
+                    //sqlCommand.Parameters.Add("@nombres", SqlDbType.VarChar, (64)).Direction = ParameterDirection.Output;
+                    //sqlCommand.Parameters.Add("@apellidos", SqlDbType.VarChar, (64)).Direction = ParameterDirection.Output;
+                    //sqlCommand.Parameters.Add("@email", SqlDbType.VarChar, 64).Direction = ParameterDirection.Output;
+                    //sqlCommand.Parameters.Add("@Mensaje", SqlDbType.VarChar, 254).Direction = ParameterDirection.Output;
+
+                    //sqlCommand.ExecuteNonQuery();
+
+                    try
+                    {
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (VerificaExisteCampoReader(reader, "ErrorMessage") == false)
+                            {
+                                if (reader.HasRows)
+                                {
+                                    while (reader.Read())
+                                    {
+                                        tiporescate = new TiposRescate();
+                                        tiporescate.idTipoRescate = (Int32)reader["IdTipoRescate"];
+                                        tiporescate.TipoRescate = reader["TipoRescate"].ToString();
+                                        lsttiporescate.Add(tiporescate);
+
+                                    }
+                                }
+                                else
+                                {
+                                    throw new Exception("No existen tipos de rescate");
+                                }
+                            }
+                            else
+                            {
+                                if (reader.Read())
+                                {
+                                    throw new Exception(reader["ErrorMessage"].ToString());
+                                }
+                            }
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+                    //MensajeError = sqlCommand.Parameters["@Mensaje"].Value.ToString();                  
+
+                }
+                conexion.CerrarConexion();
+            }
+            else
+            {
+
+            }
+            return lsttiporescate;
+        }
+
+        public List<Rescate> ListaRescates()
+        {
+
+            Conexion conexion = new Conexion();
+
+            Rescate rescate = null;
+            List<Rescate> lstrescate = new List<Rescate>();
+            string MensajeError = string.Empty;
+
+
+            if (conexion.sqlConexion.State == ConnectionState.Open)
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("SP_ObtenerRescates", conexion.sqlConexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.Clear();
+                    //sqlCommand.Parameters.Add(new SqlParameter("@idUsuario", IdUsuario));
+                    //sqlCommand.Parameters.Add("@nombres", SqlDbType.VarChar, (64)).Direction = ParameterDirection.Output;
+                    //sqlCommand.Parameters.Add("@apellidos", SqlDbType.VarChar, (64)).Direction = ParameterDirection.Output;
+                    //sqlCommand.Parameters.Add("@email", SqlDbType.VarChar, 64).Direction = ParameterDirection.Output;
+                    //sqlCommand.Parameters.Add("@Mensaje", SqlDbType.VarChar, 254).Direction = ParameterDirection.Output;
+
+                    //sqlCommand.ExecuteNonQuery();
+
+                    try
+                    {
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (VerificaExisteCampoReader(reader, "ErrorMessage") == false)
+                            {
+                                if (reader.HasRows)
+                                {
+                                    while (reader.Read())
+                                    {
+                                        rescate = new Rescate();
+                                        rescate.IdRescate = (Int32)reader["IdRescate"];
+                                        rescate.Denunciante = reader["Denunciante"].ToString();
+                                        rescate.Telefono = reader["Telefono"].ToString();
+                                        rescate.IdTipoRescate = (Int32)reader["IdTipoRescate"];
+                                        rescate.TipoRescate = reader["TipoRescate"].ToString();
+                                        rescate.Estado = reader["Estado"].ToString();
+                                        rescate.Observacion = reader["Observacion"].ToString();
+                                        rescate.Latitud = (float)reader["Latidud"];
+                                        rescate.Longitud = (float)reader["Longitud"];
+                                        lstrescate.Add(rescate);
+
+                                    }
+                                }
+                                else
+                                {
+                                    throw new Exception("No existen rescatew");
+                                }
+                            }
+                            else
+                            {
+                                if (reader.Read())
+                                {
+                                    throw new Exception(reader["ErrorMessage"].ToString());
+                                }
+                            }
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+                    //MensajeError = sqlCommand.Parameters["@Mensaje"].Value.ToString();                  
+
+                }
+                conexion.CerrarConexion();
+            }
+            else
+            {
+
+            }
+            return lstrescate;
+        }
+
+        public void NuevoRescate(Rescate rescate)
+        {
+
+            Conexion conexion = new Conexion();
+
+            string MensajeError = string.Empty;
+
+
+            if (conexion.sqlConexion.State == ConnectionState.Open)
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("SP_Insertar_Rescates", conexion.sqlConexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.Clear();
+                    sqlCommand.Parameters.Add(new SqlParameter("@Denunciante", rescate.Denunciante));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Telefono", rescate.Telefono));
+                    sqlCommand.Parameters.Add(new SqlParameter("@IdTipoRescate", rescate.IdTipoRescate));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Estado", rescate.Estado));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Latitud", rescate.Latitud));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Longitud", rescate.Longitud));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Observacion", rescate.Observacion));
+                    sqlCommand.Parameters.Add(new SqlParameter("@FechaRegistro", rescate.FechaRegistro));
+
+                    try
+                    {
+                        //var resp=sqlCommand.ExecuteNonQuery();//devuleve nro de filas afectadas
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if(reader.FieldCount>=0)
+                            {
+                                if (reader.Read())
+                                {
+                                    throw new Exception(reader["ErrorMessage"].ToString());
+                                }
+                            }
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+
+
+
+                }
+                conexion.CerrarConexion();
+            }
+            else
+            {
+
+            }
+
+        }
 
         #endregion
         #region Metodos privados
-        private bool VerificaExisteCampoReader(SqlDataReader reader,string NombreCampo)
+        private bool VerificaExisteCampoReader(SqlDataReader reader, string NombreCampo)
         {
-            bool existeCampo=false;
+            bool existeCampo = false;
             try
             {
-                foreach (DataRow row in reader.GetSchemaTable().Rows) 
+                foreach (DataRow row in reader.GetSchemaTable().Rows)
                 {
                     if (row["ColumnName"].ToString() == NombreCampo)
                     {
                         existeCampo = true;
                         break;
                     }
-                } 
-                
+                }
+
 
             }
             catch (Exception ex)
@@ -426,3 +762,4 @@ namespace RefugioService.Utiles
         #endregion
     }
 }
+
