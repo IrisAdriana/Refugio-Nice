@@ -5,19 +5,15 @@ namespace RefugioService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TipoRescateController : ControllerBase
+    public class SolicitudController : ControllerBase
     {
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-        [HttpGet(Name = "ObtenerListaTipoRescate")]
-        public List<TiposRescate> ObtenerListaTipoRescate()
+        [HttpPost(Name = "CrearNuevaSolicitud")]
+        public void CrearNuevaSolicitud(Solicitud solicitud)
         {
             //try
             //{
             clsBaseDatos bd = new clsBaseDatos();
-            return bd.ListaTiposRescates();
+            bd.NuevoSolicitud(solicitud);
 
             //}
             //catch (Exception ex)
