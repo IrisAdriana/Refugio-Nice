@@ -1,0 +1,23 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+}
+
+nav {
+  float: right;
+  padding-left: 20em;
+}
+
+a {
+  padding-left: 2em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn {
+  padding-left: 25em;
+}
