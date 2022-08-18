@@ -7,14 +7,15 @@ namespace RefugioService.Utiles
     public class clsBaseDatos
     {
         #region Metodos Publicos
-        public Cuenta VerificarCuenta(string cuenta, string pwd)
+        //public Cuenta VerificarCuenta(string cuenta, string pwd)
+        public bool VerificarCuenta(string cuenta, string pwd)
         {
 
             Conexion conexion = new Conexion();
 
             Cuenta usrcuenta = new Cuenta();
             string MensajeError = string.Empty;
-
+            bool ExisteCuenta = false;
 
             if (conexion.sqlConexion.State == ConnectionState.Open)
             {
@@ -45,20 +46,21 @@ namespace RefugioService.Utiles
                                         usrcuenta.IdUsuario = (Int32)reader["IdUsuario"];
                                         usrcuenta.Usuario = reader["Nombres"].ToString() + ' ' + reader["Apellidos"].ToString();
                                         usrcuenta.Email = reader["Email"].ToString();
+                                        ExisteCuenta = true;
                                         //lstcolor.Add(color);
 
                                     }
                                 }
                                 else
                                 {
-                                    throw new Exception("No existen colores");
+                                    //throw new Exception("No existe la cuenta");
                                 }
                             }
                             else
                             {
                                 if (reader.Read())
                                 {
-                                    throw new Exception(reader["ErrorMessage"].ToString());
+                                    //throw new Exception(reader["ErrorMessage"].ToString());
                                 }
                             }
 
@@ -67,7 +69,7 @@ namespace RefugioService.Utiles
                     catch (Exception ex)
                     {
 
-                        throw ex;
+                        //throw ex;
                     }
 
 
@@ -83,7 +85,8 @@ namespace RefugioService.Utiles
             {
 
             }
-            return usrcuenta;
+            //return usrcuenta;
+            return ExisteCuenta;
         }
         public List<clsColor> ListaColores()
         {
