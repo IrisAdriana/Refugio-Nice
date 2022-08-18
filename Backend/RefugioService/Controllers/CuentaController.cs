@@ -12,7 +12,7 @@ namespace RefugioService.Controllers
         //    return View();
         //}
         [HttpGet(Name = "Cuenta")]
-        public Cuenta VerificarCuenta(string cuenta,string pwd)
+        public bool VerificarCuenta(string cuenta,string pwd)
         {
             //try
             //{
