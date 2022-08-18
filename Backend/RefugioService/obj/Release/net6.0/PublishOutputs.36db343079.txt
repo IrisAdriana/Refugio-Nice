@@ -1,0 +1,17 @@
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\RefugioService.exe
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\RefugioService.dll
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\RefugioService.deps.json
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\RefugioService.runtimeconfig.json
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\RefugioService.pdb
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\System.Data.SqlClient.dll
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\sni.dll
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\runtimes\win-x86\native\sni.dll
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Desarrollos\RefugioService\Refugio-Nice\Backend\RefugioService\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
