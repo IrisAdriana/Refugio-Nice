@@ -5,12 +5,19 @@ type User = {
     Usuario:string;
     Email:string;
     /*Nombres: string;
+
+    Nombres: string;
+
     Apellidos: string;
     Email: string;
     Fecharegistro: Date;
     Estado: string;
     Cuenta:string;
+<<<<<<< HEAD
     Contrasena: string;*/
+
+    Contrasena: string;
+
 
     
 };

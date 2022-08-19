@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { LoginService } from '../login-service/login.service';
+
 import User from '../models/user';
 
 @Component({
@@ -9,8 +11,7 @@ import User from '../models/user';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  
+export class LoginComponent implements OnInit {  
   users$:Observable<User[]> | undefined;
 
   loading = false;
@@ -39,8 +40,10 @@ export class LoginComponent implements OnInit {
     
       this.getUser();
      
-    
-
+  
   }
+
+
+  
 
 }
