@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LandindComponent } from './landind/landind.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormSolicitudComponent } from './form-solicitud/form-solicitud.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AdoptionComponent,
     LandindComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    FormSolicitudComponent,
   ],
   
   imports: [
