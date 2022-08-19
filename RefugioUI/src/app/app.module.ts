@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LandindComponent } from './landind/landind.component';
 
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -24,6 +25,7 @@ import { GaleryComponent } from './galery/galery.component';
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
 
     LoginComponent,
     DashboardComponent,
@@ -36,6 +38,9 @@ import { GaleryComponent } from './galery/galery.component';
     FormSolicitudComponent,
     GaleryComponent,
 
+=======
+    LandindComponent
+>>>>>>> 2af10e347012c04d43593c9130c8e7fc6d33e637
   ],
   
   imports: [

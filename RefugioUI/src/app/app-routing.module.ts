@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdoptionComponent } from './adoption/adoption.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { CommonModule } from '@angular/common';
+
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandindComponent } from './landind/landind.component';
@@ -27,4 +28,15 @@ export const routes: Routes = [
  })
 
 
+
+import { RouterModule, Routes } from '@angular/router';
+
+
+export const routes: Routes = []
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+>>>>>>> 2af10e347012c04d43593c9130c8e7fc6d33e637
 export class AppRoutingModule { }
