@@ -6,10 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
 import { AdoptionComponent } from './adoption/adoption.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LandindComponent } from './landind/landind.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,19 @@ import { LandindComponent } from './landind/landind.component';
     NavbarComponent,
     DummyComponent,
     AdoptionComponent,
-    LandindComponent
+    LandindComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule, 
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

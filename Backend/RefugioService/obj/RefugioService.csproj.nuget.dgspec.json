@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Public\\ProjectNice\\Backend\\RefugioService\\RefugioService.csproj": {}
+    "C:\\Users\\Public\\Refugio-Nice\\Backend\\RefugioService\\RefugioService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Public\\ProjectNice\\Backend\\RefugioService\\RefugioService.csproj": {
+    "C:\\Users\\Public\\Refugio-Nice\\Backend\\RefugioService\\RefugioService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Public\\ProjectNice\\Backend\\RefugioService\\RefugioService.csproj",
+        "projectUniqueName": "C:\\Users\\Public\\Refugio-Nice\\Backend\\RefugioService\\RefugioService.csproj",
         "projectName": "RefugioService",
-        "projectPath": "C:\\Users\\Public\\ProjectNice\\Backend\\RefugioService\\RefugioService.csproj",
+        "projectPath": "C:\\Users\\Public\\Refugio-Nice\\Backend\\RefugioService\\RefugioService.csproj",
         "packagesPath": "C:\\Users\\iris.escobar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Public\\ProjectNice\\Backend\\RefugioService\\obj\\",
+        "outputPath": "C:\\Users\\Public\\Refugio-Nice\\Backend\\RefugioService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
