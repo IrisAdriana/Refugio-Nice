@@ -12,7 +12,7 @@ namespace RefugioService.Controllers
         //    return View();
         //}
         [HttpGet(Name = "ObtenerListaTipoRescate")]
-        public List<TiposRescate> ObtenerListaTipoMensaje()
+        public List<TiposRescate> ObtenerListaTipoRescate()
         {
             //try
             //{

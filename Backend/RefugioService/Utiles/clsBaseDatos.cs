@@ -7,14 +7,14 @@ namespace RefugioService.Utiles
     public class clsBaseDatos
     {
         #region Metodos Publicos
-        public Cuenta VerificarCuenta(string cuenta, string pwd)
+        public bool VerificarCuenta(string cuenta, string pwd)
         {
 
             Conexion conexion = new Conexion();
 
             Cuenta usrcuenta = new Cuenta();
             string MensajeError = string.Empty;
-
+            bool ExisteCuenta = false;
 
             if (conexion.sqlConexion.State == ConnectionState.Open)
             {
@@ -46,19 +46,22 @@ namespace RefugioService.Utiles
                                         usrcuenta.Usuario = reader["Nombres"].ToString() + ' ' + reader["Apellidos"].ToString();
                                         usrcuenta.Email = reader["Email"].ToString();
                                         //lstcolor.Add(color);
+                                        ExisteCuenta = true;
 
                                     }
                                 }
                                 else
                                 {
-                                    throw new Exception("No existen colores");
+                                    ExisteCuenta = false;
+                                    //throw new Exception("No existen colores");
                                 }
                             }
                             else
                             {
                                 if (reader.Read())
                                 {
-                                    throw new Exception(reader["ErrorMessage"].ToString());
+                                    //throw new Exception(reader["ErrorMessage"].ToString());
+                                    ExisteCuenta = false;
                                 }
                             }
 
@@ -67,7 +70,8 @@ namespace RefugioService.Utiles
                     catch (Exception ex)
                     {
 
-                        throw ex;
+                        //throw ex;
+                        ExisteCuenta = false;
                     }
 
 
@@ -83,7 +87,7 @@ namespace RefugioService.Utiles
             {
 
             }
-            return usrcuenta;
+            return ExisteCuenta;
         }
         public List<clsColor> ListaColores()
         {
@@ -708,6 +712,65 @@ namespace RefugioService.Utiles
                         using (SqlDataReader reader = sqlCommand.ExecuteReader())
                         {
                             if(reader.FieldCount>=0)
+                            {
+                                if (reader.Read())
+                                {
+                                    throw new Exception(reader["ErrorMessage"].ToString());
+                                }
+                            }
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+
+
+
+                }
+                conexion.CerrarConexion();
+            }
+            else
+            {
+
+            }
+
+        }
+
+
+        public void NuevoSolicitud(Solicitud solicitud)
+        {
+
+            Conexion conexion = new Conexion();
+
+            string MensajeError = string.Empty;
+
+
+            if (conexion.sqlConexion.State == ConnectionState.Open)
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("SP_Insertar_SolicitudH", conexion.sqlConexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.Clear();
+                    sqlCommand.Parameters.Add(new SqlParameter("@Solicitante", solicitud.Solicitante));
+                    sqlCommand.Parameters.Add(new SqlParameter("@IdTipoDocumentoIdentidad", solicitud.IdTipoDocumentoIdentidad));
+                    sqlCommand.Parameters.Add(new SqlParameter("@DocumentoIdentidad", solicitud.Documento));
+                    sqlCommand.Parameters.Add(new SqlParameter("@FechaNacimiento", solicitud.FechaNacimiento));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Telefono", solicitud.Telefono));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Direccion", solicitud.Direccion));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Email", solicitud.Email));
+                    sqlCommand.Parameters.Add(new SqlParameter("@FechaRegistro", solicitud.FechaRegistro));
+                    sqlCommand.Parameters.Add(new SqlParameter("@IdMascota", solicitud.IdMascota));
+                    sqlCommand.Parameters.Add(new SqlParameter("@Estado", solicitud.Estado));
+
+                    try
+                    {
+                        //var resp=sqlCommand.ExecuteNonQuery();//devuleve nro de filas afectadas
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.FieldCount >= 0)
                             {
                                 if (reader.Read())
                                 {

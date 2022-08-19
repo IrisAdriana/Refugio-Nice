@@ -5,19 +5,15 @@ namespace RefugioService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CuentaController : ControllerBase
+    public class SolicitudController : ControllerBase
     {
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-        [HttpGet(Name = "Cuenta")]
-        public bool VerificarCuenta(string cuenta,string pwd)
+        [HttpPost(Name = "CrearNuevaSolicitud")]
+        public void CrearNuevaSolicitud(Solicitud solicitud)
         {
             //try
             //{
-                clsBaseDatos bd = new clsBaseDatos();
-                return bd.VerificarCuenta(cuenta, pwd);            
+            clsBaseDatos bd = new clsBaseDatos();
+            bd.NuevoSolicitud(solicitud);
 
             //}
             //catch (Exception ex)

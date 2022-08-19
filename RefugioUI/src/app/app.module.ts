@@ -9,13 +9,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { AdoptionComponent } from './adoption/adoption.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LandindComponent } from './landind/landind.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     DummyComponent,
-    AdoptionComponent
+    AdoptionComponent,
+    LandindComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
