@@ -12,6 +12,7 @@ import { LandindComponent } from './landind/landind.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormSolicitudComponent } from './form-solicitud/form-solicitud.component';
+import { GaleryComponent } from './galery/galery.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormSolicitudComponent } from './form-solicitud/form-solicitud.componen
     LoginComponent,
     DashboardComponent,
     FormSolicitudComponent,
+    GaleryComponent,
   ],
   
   imports: [

@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandindComponent } from './landind/landind.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { GaleryComponent } from './galery/galery.component';
 
 export const routes: Routes = [ 
   { path: '', component:LandindComponent,
@@ -16,7 +17,7 @@ export const routes: Routes = [
   { path: 'dash', component:  DashboardComponent  },
   { path: 'home', component: DummyComponent },
   { path: 'aboutus', component: DummyComponent },
-  { path: 'Mascota', component: AdoptionComponent },
+  { path: 'mascota', component: GaleryComponent },
   { path: 'adoption', component: AdoptionComponent},
   { path: 'home', component: NavbarComponent}
 ]
