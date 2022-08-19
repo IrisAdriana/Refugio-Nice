@@ -12,8 +12,12 @@ namespace RefugioService.Controllers
         //    return View();
         //}
         [HttpGet(Name = "Cuenta")]
+<<<<<<< HEAD
         //public Cuenta VerificarCuenta(string cuenta,string pwd)
         public bool VerificarCuenta(string cuenta, string pwd)
+=======
+        public bool VerificarCuenta(string cuenta,string pwd)
+>>>>>>> be9ac0a55d3277aa89cc178acc65387df8c324e8
         {
             //try
             //{
