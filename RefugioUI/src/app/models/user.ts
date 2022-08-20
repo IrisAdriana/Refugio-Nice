@@ -7,10 +7,9 @@ type User = {
     Email: string;
     Fecharegistro: Date;
     Estado: string;
-    Cuenta:string;
+    Cuenta: string;
     Contrasena: string;
 
-    
 };
 
 export default User;

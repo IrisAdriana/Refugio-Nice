@@ -17,6 +17,8 @@ import { GaleryComponent } from './galery/galery.component';
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    DashboardComponent,
     NavbarComponent,
     DummyComponent,
     AdoptionComponent,
@@ -25,16 +27,17 @@ import { GaleryComponent } from './galery/galery.component';
     DashboardComponent,
     FormSolicitudComponent,
     GaleryComponent,
+    LandindComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpClientModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
