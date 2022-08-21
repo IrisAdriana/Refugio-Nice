@@ -9,10 +9,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AdoptionService {
   user!: Adoption
-  readonly apiUrlVer= "http://localhost:5149"
+  readonly apiUrlVer= "http://localhost:5149/Mascota"
 
   constructor(private httpClient: HttpClient) { }
   getPet(): Observable<Adoption[]> {
-    return this.httpClient.get<Adoption[]>(this.apiUrlVer + '/Mascota');
+    return this.httpClient.get<Adoption[]>(this.apiUrlVer);
   }
 }

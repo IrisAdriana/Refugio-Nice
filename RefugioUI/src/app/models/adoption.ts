@@ -14,7 +14,6 @@ type Adoption = {
     url_foto: string;
     estado:string;
     
-    
 };
 
 export default Adoption;

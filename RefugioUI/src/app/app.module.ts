@@ -3,30 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LandindComponent } from './landind/landind.component';
-
-import { LoginComponent } from './login/login.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
-
-
 import { NavbarComponent } from './navbar/navbar.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdoptionComponent } from './adoption/adoption.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { LandindComponent } from './landind/landind.component';
-
-
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormSolicitudComponent } from './form-solicitud/form-solicitud.component';
 import { GaleryComponent } from './galery/galery.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-
     LoginComponent,
     DashboardComponent,
     NavbarComponent,
@@ -37,21 +27,17 @@ import { GaleryComponent } from './galery/galery.component';
     DashboardComponent,
     FormSolicitudComponent,
     GaleryComponent,
-
-=======
-    LandindComponent
->>>>>>> 2af10e347012c04d43593c9130c8e7fc6d33e637
+    LandindComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpClientModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

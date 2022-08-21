@@ -1,1 +1,40 @@
-<p>dashboard works!</p>
+<div class="card">
+    <h1>Current List</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+                <th scope="col">Name</th>
+                <th scope="col">Lastname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of pets$|async">
+                <th>{{item.nombre}}</th>
+                <td>{{item.raza}}</td>
+                <td>{{item.edad}}</td>
+                <td>{{item.genero}}</td>
+                <td>{{item.caracter}}</td>
+                <td>{{item.observaciones}}</td>
+                <td>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1057/1057097.png" style="width: 30px; height: 30px;">
+                </td>
+                <td >
+                    <img src="https://cdn-icons.flaticon.com/png/512/3178/premium/3178384.png?token=exp=1658729287~hmac=96c32f9f7ca175f667127ba621a3d549"
+                        style="width: 30px; height: 30px;" >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<div>
+    <button class="btn-block btn-dark" href="/list" >Back </button>
+
+</div>
