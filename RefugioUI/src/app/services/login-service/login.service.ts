@@ -12,7 +12,21 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   getUser(): Observable<User[]> {
-    return this.httpClient.get<User[]>(this.apiURL );
+    //return this.httpClient.get<User[]>(this.apiURL );
+
+    let usertmp = {
+      cuenta: "usuario1",
+      pwd: "123"
   }
+  console.log(usertmp);
+    return this.httpClient.post<User[]>(this.apiURL, usertmp);
+  }
+
+  addUser(user: User) {
+
+    return this.httpClient.post<User>(this.apiURL, user);
+
+  }  
+
 }
 
