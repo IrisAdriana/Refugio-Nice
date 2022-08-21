@@ -8,7 +8,7 @@ type User = {
     Fecharegistro: Date;
     Estado: string;
     Cuenta: string;
-    Contrasena: string;
+    Contrasenia: string;
 
 };
 

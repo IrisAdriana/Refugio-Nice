@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormSolicitudComponent } from './form-solicitud/form-solicitud.component';
 import { GaleryComponent } from './galery/galery.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,8 @@ import { GaleryComponent } from './galery/galery.component';
     HttpClientModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
 
   ],
   providers: [],
