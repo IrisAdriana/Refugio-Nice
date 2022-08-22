@@ -8,6 +8,7 @@ import { LandindComponent } from './landind/landind.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GaleryComponent } from './galery/galery.component';
 import { FormSolicitudComponent } from './form-solicitud/form-solicitud.component';
+import { RescateComponent } from './rescate/rescate.component';
 
 export const routes: Routes = [
   { path: '', component: LandindComponent, pathMatch: 'full' },
@@ -20,7 +21,7 @@ export const routes: Routes = [
   { path: 'adoption', component: AdoptionComponent },
   { path: 'home', component: NavbarComponent },
   { path: 'form', component: FormSolicitudComponent },
-
+  { path: 'rescue', component: RescateComponent}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

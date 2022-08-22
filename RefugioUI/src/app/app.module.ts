@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormSolicitudComponent } from './form-solicitud/form-solicitud.component';
 import { GaleryComponent } from './galery/galery.component';
+import { FormRescateComponent } from './form-rescate/form-rescate.component';
+import { RescateComponent } from './rescate/rescate.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { GaleryComponent } from './galery/galery.component';
     FormSolicitudComponent,
     GaleryComponent,
     LandindComponent,
+    FormRescateComponent,
+    RescateComponent,
   ],
 
   imports: [
